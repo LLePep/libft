@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:48:55 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/05 15:15:53 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/05 15:18:49 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/05 15:29:10 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+#include <unistd.h>
+
+void *ft_memset(void *s, int c, size_t n)
 {
-	char	*dest;
-	int		cpt;
+	size_t	cpt;
 
 	cpt = 0;
-	dest = malloc(sizeof(char) * (ft_strlen (s1) + ft_strlen (s2) + 1));
-	if (dest == NULL)
-		return (NULL);
-	while (*s1 != '\0')
+	while (cpt < n)
 	{
-		dest[cpt] = *s1;
+		s[cpt] = c;
 		cpt++;
-		s1++;
 	}
-	while (*s2 != '\0')
-	{
-		dest[cpt] = *s2;
-		cpt++;
-		s2++;
-	}
-	dest[cpt] = '\0';
-	return (dest);
+	return (s);
+}
+
+int	main()
+{
+	ft_memset("Bonjour", 55, 2);
+	return (0);
 }

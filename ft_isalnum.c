@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:48:55 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/05 15:15:53 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/05 14:51:21 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/05 14:56:59 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_isalnum(int	c)
 {
-	char	*dest;
-	int		cpt;
-
-	cpt = 0;
-	dest = malloc(sizeof(char) * (ft_strlen (s1) + ft_strlen (s2) + 1));
-	if (dest == NULL)
-		return (NULL);
-	while (*s1 != '\0')
-	{
-		dest[cpt] = *s1;
-		cpt++;
-		s1++;
-	}
-	while (*s2 != '\0')
-	{
-		dest[cpt] = *s2;
-		cpt++;
-		s2++;
-	}
-	dest[cpt] = '\0';
-	return (dest);
+	if (c >= 48 && c <= 57 || c >= 65 && c <= 122 )
+		return (1);
+	return (0);
 }
