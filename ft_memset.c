@@ -6,28 +6,34 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:18:49 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/05 15:29:10 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/06 12:50:11 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 
 void *ft_memset(void *s, int c, size_t n)
 {
-	size_t	cpt;
-
-	cpt = 0;
-	while (cpt < n)
+	if (!s)
+		return (NULL);
+	unsigned char *dest = (unsigned char*) s;
+	while (n != 0)
 	{
-		s[cpt] = c;
-		cpt++;
+		*dest = c;
+		dest++;
+		n--;	
 	}
 	return (s);
 }
-
+/*
 int	main()
 {
-	ft_memset("Bonjour", 55, 2);
+	char ptr[7] = "Bonjour";
+	ft_memset(ptr, 35, 1);
+	printf("%s", ptr);
 	return (0);
 }
+*/
