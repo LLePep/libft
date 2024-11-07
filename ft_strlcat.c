@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 14:51:21 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/05 15:59:41 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/07 17:56:14 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/07 18:00:03 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int	c)
+#include <string.h>
+
+static size_t	ft_strlen(const char *s)
 {
-	if (c >= 48 && c <= 57 || c >= 65 && c <= 122 )
-		return (1);
+	int	cpt;
+
+	cpt = 0;
+	while (s[cpt] != '\0')
+		cpt++;
+	return (cpt);
+}
+
+size_t	strlcat(char *dst, const char *src, size_t size)
+{
+	size_t lensrc;
+	
+	lensrc = strlen(src);
+	
+	return (lensrc);
+}
+
+int	main()
+{
+	
 	return (0);
 }

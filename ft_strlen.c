@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:16:22 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/05 15:16:38 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:09:30 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ size_t	ft_strlen(const char *s)
 {
 	int	cpt;
 
-	while (*s != '\0')
-	{
+	cpt = 0;
+	while (s[cpt] != '\0')
 		cpt++;
-		s++;
-	}
 	return (cpt);
 }
