@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:19:15 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/08 17:02:19 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:33:04 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void *ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-void *calloc(size_t nmemb, size_t size)
+void *ft_calloc(size_t nmemb, size_t size)
 {//d'abord la creation de nbits de memoire, puis l'initialisation des zeros.
 //Faire appel a un nemset
 	void *allow_calloc;
@@ -42,7 +42,7 @@ void *calloc(size_t nmemb, size_t size)
 
 int main() {
     // Test avec nmemb = 0
-    int *arr = (int *)calloc(0, sizeof(int));
+    int *arr = (int *)ft_calloc(0, sizeof(int));
     if (arr == NULL) {
         printf("Échec de l'allocation avec 0 éléments.\n");  // Cela peut se produire, mais cela dépend de la plateforme
     } else {
