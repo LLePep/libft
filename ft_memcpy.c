@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:03:01 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/07 15:52:42 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:03:37 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
+/*Pas oublie de tchecker l allocation malloc
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
 	if ((!dest) || (!src))
