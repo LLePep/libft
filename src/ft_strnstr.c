@@ -3,31 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aviscogl <aviscogl@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:05:02 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/08 15:14:32 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/09 10:01:53 by aviscogl         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-static size_t	ft_strlen(const char *s)
+char *ft_strnstr(const char *dest, const char *src, size_t len)
 {
-	int	cpt;
-
-	cpt = 0;
-	while (s[cpt] != '\0')
-		cpt++;
-	return (cpt);
-}
-
-char *ft_strnstr(const char *dst, const char *src, size_t len)
-{
-	int	lensrc;
-	int i;
-	int j;
+	size_t	lensrc;
+	size_t i;
+	size_t j;
 	
 	i = 0;
 	j = 0;
@@ -35,23 +24,17 @@ char *ft_strnstr(const char *dst, const char *src, size_t len)
 	if(len < lensrc )
 		return(0);
 	if (lensrc == 0 || len == 0 )
-		return((char *)dst);
-	while (len >= lensrc + i && dst[i] != '\0')
+		return((char *)dest);
+	while (len >= lensrc + i && dest[i] != '\0')
 	{
-		while (src[j] == dst[i + j])
+		while (src[j] == dest[i + j])
 		{
 			j++;
 			if (j == lensrc)
-				return((char *)&dst[i]);
+				return((char *)&dest[i]);
 		}	
 		j = 0;
 		i++;
 	}
-	return(0);
-}
-
-int main ()
-{
-	printf("Voici la premiere occurence de s1 : %s", ft_strnstr("hello world", "world", 5));
 	return(0);
 }

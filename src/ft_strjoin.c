@@ -3,27 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aviscogl <aviscogl@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:48:55 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/06 15:42:29 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/09 10:01:23 by aviscogl         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-static size_t	ft_strlen(const char *s)
-{
-	int	cpt;
+#include "libft.h"
 
-	while (*s != '\0')
-	{
-		cpt++;
-		s++;
-	}
-	return (cpt);
-}
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*dest;
@@ -48,13 +36,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	dest[cpt] = '\0';
 	return (dest);
 }
-
-/* int main(void)
-{
-	char s1[] = "hello";
-	char s2[] = "world";
-
-	
-	printf("ori %s \n mine %s.", join(s1, s2), ft_strjoin(s1, s2));
-	return ;
-} */

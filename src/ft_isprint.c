@@ -1,39 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:18:49 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/06 12:56:31 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/05 15:02:19 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/05 15:07:49 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
-
-void *ft_memset(void *s, int c, size_t n)
+int	ft_isprint(int c)
 {
-	if (!s)
-		return (NULL);
-	unsigned char *dest = (unsigned char*) s;
-	while (n > 0)
-	{
-		*dest = c;
-		dest++;
-		n--;	
-	}
-	return (s);
+	if (c >= 33 && c <= 126)
+		return (1);
+	return(0);
 }
-/*
-int	main()
-{
-	char ptr[7] = "Bonjour";
-	ft_memset(ptr, 35, 1);
-	printf("%s", ptr);
-	return (0);
-}
-*/

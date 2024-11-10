@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 /*Pas oublie de tchecker l allocation malloc
 void *ft_memcpy(void *dest, const void *src, size_t n)
@@ -42,7 +39,7 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 */
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int cpt;
+	size_t cpt;
 	
 	cpt = 0;
 	unsigned char * a = (unsigned char *) dest;
@@ -53,15 +50,4 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 		cpt++;
 	}
 	return(dest);
-}
-int main()
-{
-	char dest[7] = "abcdef"; // = str[8]
-	char src[6] = "Salut";
-	void *a;
-	a = ft_memcpy(dest + 2, dest, 4);
-	char *desta = (char *) a;
-	printf("dest : %p, src : %p \n", dest, src);
-	printf("%s", desta);
-	return(0);
 }

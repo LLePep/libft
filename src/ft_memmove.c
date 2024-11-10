@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
+
 /*commencer par la fin puis tchecker si \0 existe et la taille*/
 /*groupe d'erreur si size_t n > dest || size_t n < 0*/
 //apres le chevauchement on copi le buffer dans dest
@@ -22,7 +21,7 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 {
 	if ((!dest) || (!src))
 		return (NULL);
-	int cpt;
+	size_t cpt;
 	cpt = 0;
 	unsigned char * a = (unsigned char *) dest;
 	unsigned char * b = (unsigned char *) src;
@@ -42,6 +41,6 @@ int main()
 	a = memmove(dest, dest , 2);
 	char *desta = (char *) a;
 	printf("dest : %p, src : %p \n", dest, src);
-	printf("%s, longueur : %lu", desta , strlen(desta));
+	printf("%s, longueur : %d", desta , strlen(desta));
 	return(0);
 }

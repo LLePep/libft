@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 12:52:16 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/06 14:00:00 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/05 15:16:22 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/07 17:09:30 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+size_t	ft_strlen(const char *s)
 {
-	unsigned char *dest = (unsigned char *) s;
-	while(n > 0)
-	{
-		*dest = '\0';
-		dest++;
-		n--;
-	}
+	int	cpt;
+
+	cpt = 0;
+	while (s[cpt] != '\0')
+		cpt++;
+	return (cpt);
 }
-/*
-int main()
-{
-	char ptr[] = "Salut"; 
-	printf("%lu et %s\n", strlen(ptr), ptr);
-	ft_bzero(ptr, 3);
-	printf("%lu et %s\n", strlen(ptr), ptr);
-	return (0);
-}
-*/

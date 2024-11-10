@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 14:48:27 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/05 14:57:04 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/05 15:18:49 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/06 12:56:31 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+void *ft_memset(void *s, int c, size_t n)
 {
-	if( c >= 48 && c <= 57 )
-		return (1);
-	return(0);
+	if (!s)
+		return (NULL);
+	unsigned char *dest = (unsigned char*) s;
+	while (n > 0)
+	{
+		*dest = c;
+		dest++;
+		n--;	
+	}
+	return (s);
 }
+/*
+int	main()
+{
+	char ptr[7] = "Bonjour";
+	ft_memset(ptr, 35, 1);
+	printf("%s", ptr);
+	return (0);
+}
+*/

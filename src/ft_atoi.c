@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aviscogl <aviscogl@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:15:58 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/08 15:51:36 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/09 09:46:53 by aviscogl         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -37,10 +37,4 @@ int	ft_atoi(const char *nptr)
 	}
 	number = number * sign;
 	return(number);
-}
-
-int main()
-{
-	printf("La valeur de la chaine de caractere est : %d", ft_atoi("  	 	+---+58974fdsfs"));
-	return(0);
 }

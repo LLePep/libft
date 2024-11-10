@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void *ft_memset(void *s, int c, size_t n)
 {
@@ -39,29 +38,3 @@ void *ft_calloc(size_t nmemb, size_t size)
 	ft_memset(allow_calloc, 0, size);
 	return(allow_calloc);
 }
-
-int main() {
-    // Test avec nmemb = 0
-    int *arr = (int *)ft_calloc(0, sizeof(int));
-    if (arr == NULL) {
-        printf("Échec de l'allocation avec 0 éléments.\n");  // Cela peut se produire, mais cela dépend de la plateforme
-    } else {
-        printf("Allocation réussie avec 0 éléments, arr = %p\n", arr);  // Devrait afficher un pointeur non nul (mais sans espace mémoire utile)
-    }
-
-    // Test avec size = 0
-    arr = (int *)calloc(5, 0);  // Allocation de 5 éléments, mais de taille 0
-    if (arr == NULL) {
-        printf("Échec de l'allocation avec taille 0.\n");  // Cela peut se produire sur certaines plateformes
-    } else {
-        printf("Allocation réussie avec taille 0, arr = %p\n", arr);  // Devrait afficher un pointeur non nul (mais sans espace mémoire utile)
-    }
-
-    // Libérer la mémoire si elle a été allouée
-    if (arr != NULL) {
-        free(arr);
-    }
-
-    return 0;
-}
-

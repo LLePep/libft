@@ -10,23 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
+
 //renvoie la taille copie sous forme d un size_t
 //return (len(src))
 //size correspond a la taille de dest
 //eviter l ecrasement 
 // si dest plus petit on s arrete 
-
-static size_t	ft_strlen(const char *s)
-{
-	int	cpt;
-
-	cpt = 0;
-	while (s[cpt] != '\0')
-		cpt++;
-	return (cpt);
-}
 
 size_t ft_strlcpy(char *dest, const char *src, size_t size)
 {
@@ -45,17 +35,4 @@ size_t ft_strlcpy(char *dest, const char *src, size_t size)
 	}
 	dest[cpt] = '\0';
 	return (lensrc);
-}
-
-
-int main() {
-    char src[] = "Hello, world!";
-    char dest[10];
-
-    size_t len = ft_strlcpy(dest, src, -10);
-
-    printf("Chaîne copiée: '%s'\n", dest);  // Affichera 'Hello, wo'
-    printf("Longueur nécessaire pour copier la chaîne: %zu\n", len);  // Affichera 13 (longueur de 'Hello, world!')
-
-    return 0;
 }
