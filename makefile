@@ -1,9 +1,9 @@
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I
 INC = #fichier d'entête
 SRC = src/
 OBJ = obj/
-HEAD = -I header/
+HEAD = header/
 NAME = main
 
 # Liste de tous les fichiers source .c
@@ -15,8 +15,8 @@ OBJ_FILES = $(patsubst $(SRC)%.c, $(OBJ)%.o, $(SRC_FILES))
 # Créer la règle "objs" pour compiler uniquement les fichiers objets
 objs: $(OBJ_FILES)
 
-$(OBJ)%.o: $(SRC)%.c
-	$(CC) $(HEAD) -c $< -o $@ $(CFLAGS)
+%.o: %.c ${HEAD}
+	$(CC) $(CFLAGS) $(HEAD) -c $< -o $@
 
 # Compilation complète du programme si besoin
 all: $(OBJ_FILES)

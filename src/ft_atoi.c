@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aviscogl <aviscogl@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:15:58 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/09 09:46:53 by aviscogl         ###   ########lyon.fr   */
+/*   Updated: 2024/11/11 18:14:55 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int	ft_atoi(const char *nptr)
-{
+{//gerer les long les overflow et les underflow, utiliser la bibliotheque LIMITS.h
+//avec des bool
 	int cpt;
 	int sign;
 	int number;

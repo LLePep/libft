@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:09:43 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/07 15:10:39 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:20:44 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,4 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 		cpt++;
 	}
 	return (dest);
-}
-
-int main()
-{
-	char dest[] = "abcdef"; 
-	char src[] = "Salut";
-	void *a;
-	a = memmove(dest, dest , 2);
-	char *desta = (char *) a;
-	printf("dest : %p, src : %p \n", dest, src);
-	printf("%s, longueur : %d", desta , strlen(desta));
-	return(0);
 }
