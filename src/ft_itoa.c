@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:46:36 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 15:11:34 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:36:42 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/libft.h"
+#include "../header/libft.h"
 
 static char	*ft_allow(int n)
 {

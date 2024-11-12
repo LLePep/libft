@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:04:59 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 14:17:30 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:38:31 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 char	*ft_strdup(const char *s)
 {

@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:48:55 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 14:18:07 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:38:38 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

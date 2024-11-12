@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 15:54:02 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 14:18:59 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:38:45 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {

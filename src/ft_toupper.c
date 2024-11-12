@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 05:28:51 by aviscogl          #+#    #+#             */
-/*   Updated: 2024/11/12 13:44:37 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:39:47 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 int	ft_toupper(int c)
 {

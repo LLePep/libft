@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 09:36:53 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 15:33:38 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:38:52 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/libft.h"
+#include "../header/libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

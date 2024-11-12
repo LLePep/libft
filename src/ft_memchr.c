@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 09:33:04 by aviscogl          #+#    #+#             */
-/*   Updated: 2024/11/12 13:45:48 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:36:50 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 void	*ft_memchr(const char *s1, int c, size_t n)
 {

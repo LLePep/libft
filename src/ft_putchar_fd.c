@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 11:22:53 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 14:26:10 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:37:11 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/libft.h"
+#include "../header/libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:13:21 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 15:35:46 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:39:40 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/libft.h"
+#include "../header/libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 08:35:10 by aviscogl          #+#    #+#             */
-/*   Updated: 2024/11/12 15:34:41 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:39:36 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/libft.h"
+#include "../header/libft.h"
 
 static size_t	ft_ischarset(char const *s1, char const *set)
 {

@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 09:22:37 by aviscogl          #+#    #+#             */
-/*   Updated: 2024/11/12 14:19:41 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:39:28 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

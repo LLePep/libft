@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 09:45:05 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 13:46:49 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:36:53 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

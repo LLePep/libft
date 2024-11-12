@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:07:51 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 14:23:29 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:38:19 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/libft.h"
+#include "../header/libft.h"
 
 static int	ft_issep(char const *s1, char c)
 {

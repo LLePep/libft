@@ -6,11 +6,11 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:25:19 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 15:26:45 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:37:17 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/libft.h"
+#include "../header/libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
