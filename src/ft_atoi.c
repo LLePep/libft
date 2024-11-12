@@ -6,25 +6,24 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:15:58 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/11 18:14:55 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:19:36 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
-{//gerer les long les overflow et les underflow, utiliser la bibliotheque LIMITS.h
-//avec des bool
-	int cpt;
-	int sign;
-	int number;
+int	ft_atoi(const char *nptr)//les long les overflow et les underflow, LIMITS.h
+{
+	int	cpt;
+	int	sign;
+	int	number;
 
 	cpt = 0;
 	number = 0;
 	sign = 1;
-	while ( nptr[cpt] == 32 || (9 <= nptr[cpt] && nptr[cpt] <= 13))
+	while (nptr[cpt] == 32 || (9 <= nptr[cpt] && nptr[cpt] <= 13))
 		cpt++;
-	while ( nptr[cpt] == '+' || nptr[cpt] == '-')
+	if (nptr[cpt] == '+' || nptr[cpt] == '-')
 	{
 		if (nptr[cpt] == '-')
 			sign = -sign;
@@ -37,5 +36,5 @@ int	ft_atoi(const char *nptr)
 		cpt++;
 	}
 	number = number * sign;
-	return(number);
+	return (number);
 }

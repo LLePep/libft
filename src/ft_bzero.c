@@ -6,16 +6,18 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:52:16 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/11 18:21:14 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:25:25 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *dest = (unsigned char *) s;
-	while(n > 0)
+	unsigned char	*dest;
+
+	dest = (unsigned char *)s;
+	while (n > 0)
 	{
 		*dest = '\0';
 		dest++;

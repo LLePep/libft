@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:16:22 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 14:19:12 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/12 11:39:41 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/12 14:21:09 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <fcntl.h>
+#include <unistd.h>
 
-size_t	ft_strlen(const char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int	cpt;
+	while (*s != '\0')
+	{
+		write(fd, &(*s), 1);
+		s++;
+	}
+	write(fd, &(*s), 1);
+}
 
-	cpt = 0;
-	while (s[cpt] != '\0')
-		cpt++;
-	return (cpt);
+int	main(void)
+{
+	int	fd;
+
+	fd = open("texte.txt", O_RDWR, 0644);
+	ft_putstr_fd("Bonjour ca va plutot bien et vous ?", fd);
+	close(fd);
+	return (0);
 }
