@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aviscogl <aviscogl@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:16:22 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/07 17:09:30 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/12 05:39:24 by aviscogl         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	cpt;
+	size_t	cpt;
 
 	cpt = 0;
 	while (s[cpt] != '\0')
