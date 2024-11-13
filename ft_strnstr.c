@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 09:45:05 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:36:53 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/08 14:05:02 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/13 14:34:01 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strnstr(const char *dest, const char *src, size_t len)
 {
-	size_t			cpt;
-	unsigned char	*sa1;
-	unsigned char	*sa2;
+	size_t	lensrc;
+	size_t	i;
+	size_t	j;
 
-	sa1 = (unsigned char *)s1;
-	sa2 = (unsigned char *)s2;
-	cpt = 0;
-	while (cpt < n)
+	i = 0;
+	j = 0;
+	lensrc = ft_strlen(src);
+	if (len < lensrc)
+		return (0);
+	if (lensrc == 0 || len == 0)
+		return ((char *)dest);
+	while (len >= lensrc + i && dest[i] != '\0')
 	{
-		if (sa1[cpt] != sa2[cpt])
-			return (sa1[cpt] - sa2[cpt]);
-		cpt++;
+		while (src[j] == dest[i + j])
+		{
+			j++;
+			if (j == lensrc)
+				return ((char *)&dest[i]);
+		}
+		j = 0;
+		i++;
 	}
 	return (0);
 }

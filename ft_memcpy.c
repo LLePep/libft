@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 05:28:51 by aviscogl          #+#    #+#             */
-/*   Updated: 2024/11/12 17:39:47 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/06 13:03:01 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/13 12:03:55 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
-int	ft_toupper(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	c = c - 32;
-	return (c);
+	size_t				cpt;
+	unsigned char		*a;
+	const unsigned char	*b;
+
+	cpt = 0;
+	a = (unsigned char *)dest;
+	b = (unsigned char *)src;
+	while (n > cpt)
+	{
+		a[cpt] = b[cpt];
+		cpt++;
+	}
+	return (dest);
 }

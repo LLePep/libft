@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 14:05:02 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:39:01 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/07 15:54:02 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/13 15:52:32 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
-char	*ft_strnstr(const char *dest, const char *src, size_t len)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
+	size_t	cpt;
 	size_t	lensrc;
-	size_t	i;
-	size_t	j;
 
-	i = 0;
-	j = 0;
+	cpt = 0;
 	lensrc = ft_strlen(src);
-	if (len < lensrc)
-		return (0);
-	if (lensrc == 0 || len == 0)
-		return ((char *)dest);
-	while (len >= lensrc + i && dest[i] != '\0')
+	if (size == 0)
+		return (lensrc);
+	while (size - 1 > cpt && src[cpt] != '\0')
 	{
-		while (src[j] == dest[i + j])
-		{
-			j++;
-			if (j == lensrc)
-				return ((char *)&dest[i]);
-		}
-		j = 0;
-		i++;
+		dest[cpt] = src[cpt];
+		cpt++;
 	}
-	return (0);
+	dest[cpt] = '\0';
+	return (lensrc);
 }

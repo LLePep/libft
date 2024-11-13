@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 15:54:02 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:38:45 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/12 09:36:53 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/12 17:38:52 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	cpt;
-	size_t	lensrc;
+	char			*s1;
+	unsigned int	index;
 
-	cpt = 0;
-	lensrc = strlen(src);
-	if (size == 0)
-		return (lensrc);
-	while (size - 1 > cpt && src[cpt] != '\0')
+	index = 0;
+	s1 = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (s1 == 0)
+		return (0);
+	while (s[index] != '\0')
 	{
-		dest[cpt] = src[cpt];
-		cpt++;
+		s1[index] = f(index, s[index]);
+		index++;
 	}
-	dest[cpt] = '\0';
-	return (lensrc);
+	s1[index] = '\0';
+	return (s1);
 }

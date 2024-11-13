@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:18:49 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:37:03 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/09 09:30:10 by aviscogl          #+#    #+#             */
+/*   Updated: 2024/11/13 14:18:45 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*dest;
+	int	cpt;
 
-	if (!s)
-		return (NULL);
-	dest = (unsigned char *)s;
-	while (n > 0)
-	{
-		*dest = c;
-		dest++;
-		n--;
-	}
-	return (s);
-}
-/*
-int	main(void)
-{
-	char	ptr[7] = "Bonjour";
-
-	ft_memset(ptr, 35, 1);
-	printf("%s", ptr);
+	cpt = 0;
+	c = c % 128;
+	while (s[cpt] != c && s[cpt] != '\0')
+		cpt++;
+	if (s[cpt] == c)
+		return ((char *)&s[cpt]);
 	return (0);
 }
-*/

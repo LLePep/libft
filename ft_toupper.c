@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 11:45:47 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:37:15 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/08 05:28:51 by aviscogl          #+#    #+#             */
+/*   Updated: 2024/11/13 12:27:33 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+char	ft_toupper(int c)
 {
-	while (*s != '\0')
-	{
-		write(fd, &(*s), 1);
-		s++;
-	}
-	write(fd, "\n", 1);
-	write(fd, &(*s), 1);
+	if (c >= 97 && 122 >= c)
+		c = c - 32;
+	return (c);
 }

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:16:22 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:38:49 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/08 16:19:15 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/13 17:38:49 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	cpt;
+	void	*allow_calloc;
 
-	cpt = 0;
-	while (s[cpt] != '\0')
-		cpt++;
-	return (cpt);
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	allow_calloc = malloc(size * nmemb);
+	if (allow_calloc == 0)
+		return (NULL);
+	ft_memset(allow_calloc, 0, (size*nmemb));
+	return (allow_calloc);
 }

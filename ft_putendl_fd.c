@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 09:24:34 by aviscogl          #+#    #+#             */
-/*   Updated: 2024/11/12 17:39:44 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/12 11:45:47 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/12 17:37:15 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	c = c + 32;
-	return (c);
+	while (*s != '\0')
+	{
+		write(fd, &(*s), 1);
+		s++;
+	}
+	write(fd, "\n", 1);
+	write(fd, &(*s), 1);
 }

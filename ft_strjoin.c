@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 13:09:43 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 14:16:13 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/05 12:48:55 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/12 17:38:38 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			cpt;
-	unsigned char	*a;
-	unsigned char	*b;
+	char	*dest;
+	int		cpt;
 
-	if ((!dest) || (!src))
-		return (NULL);
 	cpt = 0;
-	a = (unsigned char *)dest;
-	b = (unsigned char *)src;
-	while (n > cpt)
+	dest = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (dest == NULL)
+		return (NULL);
+	while (*s1 != '\0')
 	{
-		a[cpt] = b[cpt];
+		dest[cpt] = *s1;
 		cpt++;
+		s1++;
 	}
+	while (*s2 != '\0')
+	{
+		dest[cpt] = *s2;
+		cpt++;
+		s2++;
+	}
+	dest[cpt] = '\0';
 	return (dest);
 }

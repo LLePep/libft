@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 14:13:21 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:39:40 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/08 17:04:59 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/12 17:38:31 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strdup(const char *s)
 {
-	char	*s2;
-	size_t	cpt;
+	char	*dst;
+	int		len;
 
-	cpt = 0;
-	if (start >= ft_strlen(s))
-		return (0);
-	s2 = malloc(sizeof(char) * len + 1);
-	if (s2 == 0)
-		return (0);
-	while (s[start + cpt] != '\0' && cpt < len)
+	if (s == NULL)
+		return (NULL);
+	len = ft_strlen(s);
+	dst = malloc(sizeof(char) * len);
+	if (dst == 0)
+		return (NULL);
+	while (len >= 0)
 	{
-		s2[cpt] = s[start + cpt];
-		cpt++;
+		dst[len] = s[len];
+		len--;
 	}
-	s2[cpt] = 0;
-	return (s2);
+	return (dst);
 }

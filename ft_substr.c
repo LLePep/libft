@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 17:56:14 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:38:42 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/05 14:13:21 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/13 17:40:53 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*s2;
 	size_t	cpt;
-	size_t	lendest;
 
-	lendest = ft_strlen(dest);
 	cpt = 0;
-	if (size <= lendest)
-		return (size + ft_strlen(src));
-	while ((lendest + cpt + 1) < size && src[cpt] != '\0')
+	if (start >= ft_strlen(s) || s[cpt] == '\0' || len == 0)
+		return (ft_calloc(1, sizeof(char)));
+	if (len >= ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	s2 = malloc(sizeof(char) * (len + 1));
+	if (s2 == NULL)
+		return (0);
+	while (s[start + cpt] != '\0' && cpt < len)
 	{
-		dest[cpt + lendest] = src[cpt];
+		s2[cpt] = s[start + cpt];
 		cpt++;
 	}
-	dest[cpt + lendest] = '\0';
-	return (ft_strlen(src) + lendest);
+	s2[cpt] = 0;
+	return (s2);
 }
