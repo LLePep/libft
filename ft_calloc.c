@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:19:15 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/13 17:38:49 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:54:05 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	allow_calloc = malloc(size * nmemb);
 	if (allow_calloc == 0)
 		return (NULL);
-	ft_memset(allow_calloc, 0, (size*nmemb));
+	ft_memset(allow_calloc, 0, (size * nmemb));
 	return (allow_calloc);
 }
