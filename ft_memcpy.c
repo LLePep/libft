@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:03:01 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/13 12:03:55 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/18 09:28:58 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t				cpt;
+	size_t				count;
 	unsigned char		*a;
-	const unsigned char	*b;
+	unsigned char		*b;
 
-	cpt = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	count = 0;
 	a = (unsigned char *)dest;
 	b = (unsigned char *)src;
-	while (n > cpt)
+	while (n > count)
 	{
-		a[cpt] = b[cpt];
-		cpt++;
+		a[count] = b[count];
+		count++;
 	}
 	return (dest);
 }

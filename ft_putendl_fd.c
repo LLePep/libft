@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 11:45:47 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:37:15 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/14 19:20:30 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ void	ft_putendl_fd(char *s, int fd)
 		s++;
 	}
 	write(fd, "\n", 1);
-	write(fd, &(*s), 1);
 }

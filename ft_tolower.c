@@ -6,13 +6,13 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 09:24:34 by aviscogl          #+#    #+#             */
-/*   Updated: 2024/11/13 12:27:23 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/14 17:20:51 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		c = c + 32;

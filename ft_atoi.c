@@ -6,35 +6,35 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:15:58 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 13:19:36 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/19 10:35:58 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)//les long les overflow et les underflow, LIMITS.h
+int	ft_atoi(const char *nptr)
 {
-	int	cpt;
-	int	sign;
-	int	number;
+	int			count;
+	int			sign;
+	long long	number;
 
-	cpt = 0;
+	count = 0;
 	number = 0;
 	sign = 1;
-	while (nptr[cpt] == 32 || (9 <= nptr[cpt] && nptr[cpt] <= 13))
-		cpt++;
-	if (nptr[cpt] == '+' || nptr[cpt] == '-')
+	while (nptr[count] == 32 || (9 <= nptr[count] && nptr[count] <= 13))
+		count++;
+	if (nptr[count] == '+' || nptr[count] == '-')
 	{
-		if (nptr[cpt] == '-')
+		if (nptr[count] == '-')
 			sign = -sign;
-		cpt++;
+		count++;
 	}
-	while (nptr[cpt] >= '0' && nptr[cpt] <= '9')
-	{
-		number = number * 10;
-		number = number + nptr[cpt] - 48;
-		cpt++;
-	}
+	while (nptr[count] >= '0' && nptr[count] <= '9')
+		number = (number * 10) + nptr[count++] - 48;
 	number = number * sign;
-	return (number);
+	if (number > __LONG_MAX__)
+		return (-1);
+	if (number < (__LONG_MAX__ * -1) - 1)
+		return (0);
+	return ((int)number);
 }

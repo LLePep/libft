@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 17:56:14 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/18 09:35:56 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/15 11:20:09 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/15 18:56:01 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t	count;
-	size_t	lendest;
-
-	lendest = ft_strlen(dest);
-	count = 0;
-	if (size <= lendest)
-		return (size + ft_strlen(src));
-	while ((lendest + count + 1) < size && src[count] != '\0')
-	{
-		dest[count + lendest] = src[count];
-		count++;
-	}
-	dest[count + lendest] = '\0';
-	return (ft_strlen(src) + lendest);
+	new->next = *lst;
+	*lst = new;
 }

@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 09:45:05 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:36:53 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/18 09:28:46 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			cpt;
+	size_t			count;
 	unsigned char	*sa1;
 	unsigned char	*sa2;
 
 	sa1 = (unsigned char *)s1;
 	sa2 = (unsigned char *)s2;
-	cpt = 0;
-	while (cpt < n)
+	count = 0;
+	while (count < n)
 	{
-		if (sa1[cpt] != sa2[cpt])
-			return (sa1[cpt] - sa2[cpt]);
-		cpt++;
+		if (sa1[count] != sa2[count])
+			return (sa1[count] - sa2[count]);
+		count++;
 	}
 	return (0);
 }

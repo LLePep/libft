@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:25:07 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:38:34 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/18 14:23:45 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	index = 0;
 	while (s[index] != '\0')
 	{
-		f(index, s);
+		f(index, &s[index]);
 		index++;
 	}
 	s[index] = '\0';

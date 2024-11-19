@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 17:56:14 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/18 09:35:56 by lpalabos         ###   ########.fr       */
+/*   Created: 2024/11/15 15:13:21 by lpalabos          #+#    #+#             */
+/*   Updated: 2024/11/16 13:50:31 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	count;
-	size_t	lendest;
+	t_list	*cursor;
 
-	lendest = ft_strlen(dest);
-	count = 0;
-	if (size <= lendest)
-		return (size + ft_strlen(src));
-	while ((lendest + count + 1) < size && src[count] != '\0')
+	if (*lst == NULL && new)
 	{
-		dest[count + lendest] = src[count];
-		count++;
+		*lst = new;
+		new->next = NULL;
+		return ;
 	}
-	dest[count + lendest] = '\0';
-	return (ft_strlen(src) + lendest);
+	cursor = *lst;
+	while (cursor->next != NULL)
+		cursor = cursor->next;
+	cursor->next = new;
 }

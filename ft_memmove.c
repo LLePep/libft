@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:09:43 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/13 12:03:40 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/18 09:29:27 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,40 @@
 
 void	*ft_overlap(void *dest, const void *src, size_t n)
 {
-	size_t				cpt;
+	size_t				count;
 	unsigned char		*a;
 	const unsigned char	*b;
 
-	cpt = 0;
+	count = 0;
 	a = (unsigned char *)dest;
 	b = (unsigned char *)src;
-	while (n > cpt)
+	while (n > count)
 	{
-		cpt++;
-		a[n - cpt] = b[n - cpt];
+		count++;
+		a[n - count] = b[n - count];
 	}
 	return (dest);
 }
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t				cpt;
+	size_t				count;
 	unsigned char		*a;
 	const unsigned char	*b;
 
-	cpt = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	count = 0;
 	a = (unsigned char *)dest;
 	b = (unsigned char *)src;
 	if (dest > src && dest + n > src)
 		ft_overlap(dest, src, n);
 	else
 	{
-		while (n > cpt)
+		while (n > count)
 		{
-			a[cpt] = b[cpt];
-			cpt++;
+			a[count] = b[count];
+			count++;
 		}
 	}
 	return (dest);

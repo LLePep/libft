@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 09:33:04 by aviscogl          #+#    #+#             */
-/*   Updated: 2024/11/13 15:54:06 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/18 09:28:30 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	*ft_memchr(const void *s1, int c, size_t n)
 {
-	size_t					cpt;
+	size_t					count;
 	const unsigned char		*a;
 	unsigned char			b;
 
-	cpt = 0;
+	count = 0;
 	a = (const unsigned char *) s1;
 	b = (unsigned char ) c;
-	while (cpt < n)
+	while (count < n)
 	{
-		if (a[cpt] == b)
-			return ((void *)(a + cpt));
-		cpt++;
+		if (a[count] == b)
+			return ((void *)(a + count));
+		count++;
 	}
 	return (NULL);
 }

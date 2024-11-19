@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:25:19 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/12 17:37:17 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:35:47 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,29 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*s1;
+	char	number;
 
-	s1 = ft_itoa(n);
-	ft_putstr_fd(s1, fd);
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		ft_putnbr_fd(n * (-1), fd);
+		return ;
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		number = (n % 10) + 48;
+	}
+	else
+	{
+		number = n + 48;
+		write(fd, &number, 1);
+		return ;
+	}
+	write(fd, &number, 1);
 }

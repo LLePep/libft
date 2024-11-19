@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 09:22:37 by aviscogl          #+#    #+#             */
-/*   Updated: 2024/11/13 13:56:51 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/18 09:37:07 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	cpt;
+	int	count;
 	int	find;
 
-	cpt = 0;
+	count = 0;
 	find = 0;
 	c = c % 128;
 	if (s[find] == c)
 		return ((char *)&s[find]);
-	while (s[cpt] != '\0')
+	while (s[count] != '\0')
 	{
-		cpt++;
-		if (s[cpt] == c)
-			find = cpt;
+		count++;
+		if (s[count] == c)
+			find = count;
 	}
 	if (s[find] == c)
 		return ((char *)&s[find]);

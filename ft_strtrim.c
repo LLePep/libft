@@ -6,47 +6,51 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 08:35:10 by aviscogl          #+#    #+#             */
-/*   Updated: 2024/11/12 17:39:36 by lpalabos         ###   ########.fr       */
+/*   Updated: 2024/11/18 13:59:42 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_ischarset(char const *s1, char const *set)
+static int	ft_issep(char const *s1, char const *set)
 {
-	size_t	cpt;
+	int	count;
 
-	cpt = 0;
-	while (s1[cpt] != '\0' && s1[cpt] == set[cpt])
+	count = 0;
+	while (set[count] != '\0')
 	{
-		cpt++;
-		if (set[cpt] == '\0')
-			return (cpt);
+		if (*s1 == set[count])
+			return (1);
+		count++;
 	}
 	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		cpt;
-	int		start;
-	int		end;
 	char	*dest;
+	size_t	start;
+	size_t	end;
+	size_t	count;
 
-	cpt = -1;
 	start = 0;
-	if (s1 == NULL || set == NULL)
-		return (0);
-	end = ft_strlen(s1) - ft_strlen(set);
-	while (ft_ischarset(&s1[start], set))
-		start = start + ft_ischarset(&s1[start], set);
-	while (ft_ischarset(&s1[end], set))
-		end = end - ft_ischarset(&s1[end], set);
-	dest = malloc(sizeof(char) * (((unsigned int)(end - start)) + 1));
-	if (dest == 0)
-		return (0);
-	while (++cpt <= (end - start))
-		dest[cpt] = s1[start + cpt];
-	dest[cpt] = '\0';
+	count = -1;
+	end = ft_strlen(s1);
+	while (ft_issep(&s1[start], set) && start != end)
+		start = start + 1;
+	while (end > 0 && ft_issep(&s1[end - 1], set))
+		end = end - 1;
+	if ((int)(end - start) < 0)
+	{
+		dest = malloc(1);
+		dest[0] = '\0';
+		return (dest);
+	}
+	dest = malloc(sizeof(char) * (end - start + 1));
+	if (dest == NULL)
+		return (NULL);
+	while (++count < (end - start))
+		dest[count] = s1[start + count];
+	dest[count] = '\0';
 	return (dest);
 }
