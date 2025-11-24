@@ -6,13 +6,12 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:04:59 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/18 09:56:45 by lpalabos         ###   ########.fr       */
+/*   Updated: 2025/11/24 14:06:35 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// On verifie pas l'allocation du parametre car on veux que ca crash
 char	*ft_strdup(const char *s)
 {
 	char	*dst;
