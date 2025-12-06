@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:58:54 by lpalabos          #+#    #+#             */
-/*   Updated: 2024/11/15 18:55:19 by lpalabos         ###   ########.fr       */
+/*   Updated: 2025/12/06 14:53:48 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -22,6 +23,8 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_atoull(const char *str, unsigned long long *number_to_return);
+int					ft_iswhitespace(char c);
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
@@ -32,7 +35,7 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-int					ft_atoi(const char *nptr);
+int					ft_atoi(const char *str, int *number_to_return);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);
 int					ft_isalnum(int c);
@@ -63,7 +66,7 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_putchar_fd(char c, int fd);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char				**ft_split(char const *s, char c);
+char				**ft_split(char const *s, char *set);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 #endif

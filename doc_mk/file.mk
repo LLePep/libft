@@ -41,6 +41,7 @@ SRC_CHECK := 	ft_isalpha.c \
 				ft_isalnum.c \
 				ft_isascii.c \
 				ft_isprint.c \
+				ft_iswhitespace.c
 
 DIR_SRC_CHECK := $(addprefix $(DIR_CHECK), $(SRC_CHECK))
 
@@ -69,6 +70,7 @@ SRC_STRING :=	ft_strlen.c \
         		ft_itoa.c \
         		ft_strmapi.c \
         		ft_striteri.c \
+				ft_atoull.c
 
 DIR_SRC_STRING := $(addprefix $(DIR_STRING), $(SRC_STRING))
 
