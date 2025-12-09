@@ -6,7 +6,7 @@
 /*   By: lpalabos <lpalabos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:58:54 by lpalabos          #+#    #+#             */
-/*   Updated: 2025/12/06 14:53:48 by lpalabos         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:03:14 by lpalabos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+size_t 				ft_strlen_tab(const char **tab);
 int					ft_atoull(const char *str, unsigned long long *number_to_return);
 int					ft_iswhitespace(char c);
 t_list				*ft_lstnew(void *content);
