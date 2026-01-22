@@ -28,7 +28,7 @@ void	*ft_free_all(char **tab, int index)
 
 static int	ft_issep(char const s1, char *c)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (c[i] != '\0')

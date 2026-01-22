@@ -23,8 +23,9 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-size_t 				ft_strlen_tab(const char **tab);
-int					ft_atoull(const char *str, unsigned long long *number_to_return);
+size_t				ft_strlen_tab(const char **tab);
+int					ft_atoull(const char *str,
+						unsigned long long *number_to_return);
 int					ft_iswhitespace(char c);
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);

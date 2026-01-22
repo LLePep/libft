@@ -21,9 +21,10 @@ size_t	ft_strlen(const char *s)
 		count++;
 	return (count);
 }
-size_t ft_strlen_tab(const char **tab)
+
+size_t	ft_strlen_tab(const char **tab)
 {
-	size_t count;
+	size_t	count;
 
 	count = 0;
 	while (tab[count] != NULL)

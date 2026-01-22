@@ -17,29 +17,29 @@
  */
 int	ft_atoull(const char *str, unsigned long long *number_to_return)
 {
-	int			count;
-	int			sign;
+	int	count;
+	int	sign;
 
 	count = 0;
 	sign = 1;
-    *number_to_return = 0;
+	*number_to_return = 0;
 	while (ft_iswhitespace(str[count]))
 		count++;
 	while (str[count] == '+' || str[count] == '-')
 	{
 		if (str[count] == '-')
 			sign = -sign;
-		count ++;
+		count++;
 	}
 	if (sign == -1)
 		return (1);
-    if (str[count] < '0' || str[count] > '9')
-        return (1);
-    while (str[count] >= '0' && str[count] <= '9')
+	if (str[count] < '0' || str[count] > '9')
+		return (1);
+	while (str[count] >= '0' && str[count] <= '9')
 	{
 		if (*number_to_return > ((ULLONG_MAX - (str[count] - '0')) / 10))
 			return (1);
-		*number_to_return = (*number_to_return * 10) + str[count++] - 48;
+		*number_to_return = ((*number_to_return * 10) + str[count++] - 48);
 	}
 	return (0);
 }
