@@ -23,6 +23,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_str_isdigit(const char *str);
 size_t				ft_strlen_tab(const char **tab);
 int					ft_atoull(const char *str,
 						unsigned long long *number_to_return);
