@@ -24,3 +24,21 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[count]);
 	return (0);
 }
+
+int	ft_str_count_char(const char *str, int c)
+{
+	size_t	i;
+	size_t	count;
+
+	i = 0;
+	count = 0;
+	if (!str)
+		return (count);
+	while (str[i])
+	{
+		if (str[i] == c)
+			count++;
+		i++;
+	}
+	return (count);
+}
